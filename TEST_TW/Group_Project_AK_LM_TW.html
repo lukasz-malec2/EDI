@@ -12,14 +12,31 @@
         <h2>Anna Kornaga</h2>
             <button id="AK_details_button" onclick = "show_ak_data()" class ="btn btn-primary">Click for more information about Ania</button>
             <p></p>
+            
         <h2>Łukasz Malec</h2>
             <button id="LM_details_button" onclick = "show_lm_data()" class ="btn btn-success"> Group Leader - Click for more information about Łukasz</button>
             <p></p>
-        <h2>Tomasz Wojdyła</h2>
-            <button id="TW_details_button" onclick = "show_tw_data()" ondblclick = "hide_tw_data()" class ="btn btn-primary">Click for more information about Tomek</button>
-            <div id="TW_details" style="visibility:hidden">
-                <p>Album number: 234216</p>
+        
+        <h2>Tomasz Wojdyła</h2>  
+            <div class="row">
+            <div class="column">
+            <div class="container_gp">
+            <img src="TW_foto.jpg" alt="My photo :)" class="image_gp">
+            <div class="middle_gp">
+              <div class = "text_gp" onclick = "show_tw_data()">Click for more info</div>
             </div>
+        </div>
+        </div>
+        <div class="column2" id ="TW_details">
+            <p></p>
+            <button id="TW_details_button" onclick = "show_tw_data()" ondblclick = "hide_tw_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <div>
+                <p>Album number: 234216</p>
+                <p>Group: ZIISN1-1112</p>
+                <p>Favourite animal: <a href="https://en.wikipedia.org/wiki/Flying_squirrel" target="_blank">Flying Squirrel</a></p>
+            </div>
+        </div>
+        </div>
         <hr>
         <h1>Imported data</h1>
             <h2>Retrieve data with Fetch API</h2>
