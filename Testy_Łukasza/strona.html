@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="style_łukasz.css">
+
+<html>
+    <head>
+        <title>Group Project</title>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+         <h2>Anna Kornaga </h2>
+            <button id="AK_details_button" onclick = "show_ak_data()" ondblclick = "hide_ak_data()" class ="btn btn-primary">Click for more information about Anna</button>
+            <div id="AK_details" style="visibility:hidden">
+                <p>Album number: Nieznany </p>
+            </div>
+        <h2>Łukasz Malec</h2>
+            <button id="LM_details_button" onclick = "show_lm_data()" ondblclick = "hide_lm_data()" class ="btn btn-primary">Click for more information about Łukasz</button>
+            <div id="LM_details" style="visibility:hidden">
+                <p>Album number: 226202</p>
+            </div>
+        <h2>Tomasz Wojdyła</h2>
+            <button id="TW_details_button" onclick = "show_tw_data()" ondblclick = "hide_tw_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <div id="TW_details" style="visibility:hidden">
+                <p>Album number: 234216</p>
+            </div>
+
+
+
+        <hr>
+        <h1>Imported data</h1>
+            <h2>Retrieve data with Fetch API</h2>
+            <button id="Fetch_API_console_button" onclick = "Fetch_and_log_to_console()" class ="btn btn-secondary">Click to fetch data and log in console</button>
+            <p></p>
+            <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-success">Click to display retrieved data</button>
+            <p></p>
+            <div id="Fetch_retrieved_data"></div>
+       <hr>
+
+         <hr>
+            <h2>Retrieve data with jQuery</h2>
+            <button id="jQuery_console_button" onclick="jQuery_to_console()" class="btn btn-secondary">Click to retrieve data and log in console</button>
+            <p></p>
+            <button id="jQuery_button" onclick="jQuery_display_data()" class="btn btn-success">Click to display retrieved data</button>
+            <p></p>
+            <div id="team-members-list"></div>
+            <hr>
+
+         <script>
+            $(document).ready(function () {
+
+                var apiUrl = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40";
+
+                function fetchData() {
+                    $.ajax({
+                        url: apiUrl,
+                        dataType: 'json',
+                        success: function (data) {
+                            var teamMembersList = $('#team-members-list');
+                            teamMembersList.empty();
+                            if (data && data.length > 0) {
+                                $.each(data, function (index, siatkarz) {
+                                    var listItem = $('<li>').text(siatkarz["first_name"] + ' ' + siatkarz["last_name"] + ' (' + siatkarz.height_cm + ' cm)');
+                                    teamMembersList.append(listItem);
+                                });
+                            } else {
+                                teamMembersList.append('<p>No data available.</p>');
+                            }
+                        },
+                        error: function (error) {
+                            console.error('Error fetching data:', error);
+                            $('#team-members-list').html('<p>Error fetching data. Please try again later.</p>');
+                        }
+                    });
+                }
+
+                $('#jQuery_button').click(fetchData);
+            });
+         </script>
+
+
+        <script>
+            $(document).ready(function () {
+
+                var apiUrl = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40";
+
+                function fetchDataConsole() {
+                    $.ajax({
+                        url: apiUrl,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data && data.length > 0) {
+                                console.log("List of Volleyball Players:");
+                                $.each(data, function (index, siatkarz) {
+                                    console.log(siatkarz["first_name"] + ' ' + siatkarz["last_name"] + ' (' + siatkarz.height_cm + ' cm)');
+                                });
+                            } else {
+                                console.log('No data available.');
+                            }
+                        },
+                        error: function (error) {
+                            console.error('Error fetching data:', error);
+                        }
+                    });
+                }
+
+                $('#jQuery_console_button').click(fetchDataConsole);
+            });
+        </script>
+
+
+
+        <h1>Data Visualization</h1>
+            <h2 id="test">Visualization with Chart.js</h2>
+            <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-warning">Show number of top players by Country</button>
+            <div>
+                <canvas id="players_by_country_chart"></canvas>
+            </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src = "funkcje.js"></script>
+        <script src = "funkcje_drugie.js"></script>
+    </body>
+</html>
