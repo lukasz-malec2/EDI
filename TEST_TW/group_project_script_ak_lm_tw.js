@@ -42,6 +42,35 @@ function Fetch_and_display_data() {
 }
 
 
+//display data in table
+function Fetch_and_display_table() {
+  fetch("https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40") 
+    .then(function(response){
+      return response.json()
+    })
+  .then(function(datapoints) {
+    let placeholder = document.getElementById("Fetch_retrieved_data_table");
+    let out = "";
+    for (let datapoint of datapoints) {
+      out += `
+        <tr>
+          <td>${datapoint.first_name}</td>
+          <td>${datapoint.last_name}</td>
+          <td>${datapoint.date_of_birth}</td>
+          <td>${datapoint.country_of_birth}</td>
+          <td>${datapoint.height_cm}</td>
+          <td>${datapoint.weight_kg}</td>
+          <td>${datapoint.position_in_field}</td>
+          <td>${datapoint.range_in_block}</td>
+          <td>${datapoint.range_in_attack}</td>
+          <td>${datapoint.curent_club}</td>
+        <tr>
+      `;
+    };
+    placeholder.innerHTML = out
+  })
+}
+
 
 //chart.js function for count of players from particular countries
 //https://www.youtube.com/watch?v=mw5i_QGDomw
