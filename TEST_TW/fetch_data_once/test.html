@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document_test</title>
+</head>
+<body>
+    <h1>To jest test</h1>
+    <p></p>
+    <button id="this_button2" onclick ="Fetch_and_log_to_console()">Najpierw fetch</button>
+    <button id="this_button2" onclick ="doit2()">Sprawdz input w konsoli</button>
+
+    <p id = "grab_it"></p>
+
+
+    <h2 id="test">Visualization with Chart.js</h2>
+    <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-warning">wygeneruj wykres z pobranych danych</button>
+    <div>
+        <canvas id="players_by_country_chart"></canvas>
+    </div>
+    <button id="Chartjs_viz" onclick = "render(players)" class ="btn btn-warning">zniszcz poprzedni wykres</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src = "test.js"></script> 
+</body>
+</html>
