@@ -65,8 +65,10 @@ function Fetch_and_display_table() {
 
 
 
+//chart.js function for count of players from particular countries
+//https://www.youtube.com/watch?v=mw5i_QGDomw
 
-
+function chart_js_method() {
 
 //chart placeholder
 const data = {
@@ -90,12 +92,6 @@ const config = {
 }
 const players_by_country_chart = new Chart(document.getElementById("players_by_country_chart"),config);
 
-
-
-//chart.js function for count of players from particular countries
-//https://www.youtube.com/watch?v=mw5i_QGDomw
-
-function chart_js_method() {
 //Fetch block
   async function fetch_data() {
     const url = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40"; // full API 100 records

@@ -25,11 +25,11 @@
 
         <div class="column2" id ="AK_details">
             <p></p>
-            <button id="AK_details_button" onclick = "show_ak_data()" ondblclick = "hide_ak_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <button id="AK_details_button" onclick = "show_ak_data()" ondblclick = "hide_ak_data()" class ="btn btn-primary">Click for more information about Ania</button>
             <div>
-                <p>Album number: NIEZNANY</p>
+                <p>Album number: 221380</p>
                 <p>Group: ZIISN1-1112</p>
-                <p>Favourite animal: <a href="https://en.wikipedia.org/wiki/Flying_squirrel" target="_blank">Flying Squirrel</a></p>
+                <p>Favourite color: <a href="https://en.wikipedia.org/wiki/Magenta" target="_blank">Magenta</a></p>
             </div>
         </div>
         </div>
@@ -50,7 +50,7 @@
 
         <div class="column2" id ="LM_details">
             <p></p>
-            <button id="LM_details_button" onclick = "show_lm_data()" ondblclick = "hide_lm_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <button id="LM_details_button" onclick = "show_lm_data()" ondblclick = "hide_lm_data()" class ="btn btn-primary">Click for more information about Łukasz</button>
             <div>
                 <p>Album number: 226202</p>
                 <p>Group: ZIISN1-1112</p>
@@ -65,7 +65,7 @@
             <div class="row">
             <div class="column">
             <div class="container_gp">
-            <img src="tomek.jpg" style="width: 230px; height: 190px; " alt="My photo :)" class="image_gp">
+            <img src="tomek.jpg" style="width: 230px; height: 200px; " alt="My photo :)" class="image_gp">
             <div class="middle_gp">
               <div class = "text_gp" onclick = "show_tw_data()">Click for more info</div>
             </div>
@@ -120,14 +120,13 @@
         <hr>
 
 
-        <hr>
             <h2>Retrieve data with jQuery</h2>
             <button id="jQuery_console_button" onclick="jQuery_to_console()" class="btn btn-secondary">Click to retrieve data and log in console</button>
             <p></p>
             <button id="jQuery_button" onclick="jQuery_display_data()" class="btn btn-success">Click to display retrieved data</button>
             <p></p>
             <div id="team-members-list"></div>
-        <button id="jQUERY_button_table" onclick = "Fetch_and_display_table()" class ="btn btn-warning">Click to display retrieved data in table</button>
+        <button id="jQUERY_button_table" onclick = "Fetch_and_display_table_jQ()" class ="btn btn-warning">Click to display retrieved data in table</button>
             <p></p>
             <table class="table table-hover">
                 <thead>
@@ -221,7 +220,7 @@
         <!--tabela w jquery-->
         <script>
           $(document).ready(function() {
-            function Fetch_and_display_table() {
+            function Fetch_and_display_table_jQ() {
               $.ajax({
                 url: "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40",
                 dataType: "json",
@@ -250,7 +249,7 @@
             }
 
             // Call the function when the document is ready
-              $('#jQUERY_button_table').click(Fetch_and_display_table);
+              $('#jQUERY_button_table').click(Fetch_and_display_table_jQ);
           });
         </script>
 
@@ -267,7 +266,7 @@
             </div>
             <br>
             <button id="Chartjs_viz2" onclick = "chart_js_method2()" class ="btn btn-warning">Show number of top players by field position</button>
-            <div>
+            <div class="small_diag">
                 <canvas id="players_by_position_chart"></canvas>
             </div>
 

@@ -96,3 +96,9 @@
     display: table;
     clear: both;
   }
+
+  /* Container with for small diagram*/
+  .small_diag {
+    width: 800px;
+    align-content: center;
+  }
