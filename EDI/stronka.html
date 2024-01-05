@@ -92,9 +92,11 @@
             <h2>Retrieve data with Fetch API</h2>
             <button id="Fetch_API_console_button" onclick = "Fetch_and_log_to_console()" class ="btn btn-secondary">Click to fetch data and log in console</button>
             <p></p>
-            <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-success">Click to fetch data and display retrieved data as a list</button>
+            <button id="Display_data_as_list1" onclick = "Display_data_as_list1()" class ="btn btn-success">Click to display retrieved data as a list</button>
+            <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-danger">Click to fetch data and display retrieved data as a list</button>
             <p></p>
             <div id="Fetch_retrieved_data"></div>
+            <button id="Display_data_in_table1" onclick = "Display_data_in_table1()" class ="btn btn-primary">Click to display retrieved data in the table</button>
             <button id="Fetch_API_button_table" onclick = "Fetch_and_display_table()" class ="btn btn-warning">Click to fetch data and display retrieved data in the table</button>
             <p></p>
             <table class="table table-hover">
@@ -260,12 +262,14 @@
         <!--CZĘŚĆ Z WYKRESAMI-->
        <h1>Data Visualization</h1>
             <h2 id="test">Visualization with Chart.js</h2>
-            <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-primary">Show number of top players by Country - Bar chart</button>
+            <button id="Chartjs_viz_old_data" onclick = "chart_js_method_old_data()" class ="btn btn-primary">Show number of top players by country - Bar chart</button>
+            <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-secondary">Fetch new data and show number of top players by country - Bar chart</button>
             <div>
                 <canvas id="players_by_country_chart"></canvas>
             </div>
             <br>
-            <button id="Chartjs_viz2" onclick = "chart_js_method2()" class ="btn btn-primary">Show number of top players by field position - Doughnut chart</button>
+            <button id="Chartjs_viz2_old_data" onclick = "chart_js_method2_old_data()" class ="btn btn-primary">Show number of top players by field position - Doughnut chart</button>
+            <button id="Chartjs_viz2" onclick = "chart_js_method2()" class ="btn btn-secondary">Fetch new data and show number of top players by field position - Doughnut chart</button>
             <div class="small_diag">
                 <canvas id="players_by_position_chart"></canvas>
             </div>
