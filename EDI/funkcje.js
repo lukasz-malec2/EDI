@@ -484,6 +484,9 @@ function chart_js_method3_old_data() {
         legend: {
           position: "bottom",
           display: true,
+          labels:{
+            usePointStyle: true,
+          },
         },
         title: {
           position: "top",
@@ -588,6 +591,9 @@ function chart_js_method3() {
         legend: {
           position: "bottom",
           display: true,
+          labels:{
+            usePointStyle: true,
+          },
         },
         title: {
           position: "top",
