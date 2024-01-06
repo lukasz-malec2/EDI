@@ -400,9 +400,7 @@ const players_by_position_chart = new Chart(document.getElementById("players_by_
     });
   }
 
-  
-
-//Use existing data and display in bubble diagram
+//Use existing data and display in diagram
 function chart_js_method3_old_data() {
 
   //chart placeholder
@@ -499,105 +497,3 @@ reload_data().then(datapoints => {
 }
 
 
-
-//Fetch new data and display in bubble diagram
-function chart_js_method3() {
-
-  //chart placeholder
-  const data = {
-    datasets: [{
-      label: 'Placeholder',
-      data: [],
-      }],
-    };
-  const config = {
-    type: 'bubble',
-    data,
-    options: {
-      title: "Combination of range in attack and in range in block for each player in top 100",
-      plugins: {
-        legend: {
-          display:true,
-          labels: {
-            usePointStyle: true,
-          },
-        }
-      },
-      scales: {
-        x: {
-          border: {
-            display: true,
-            color: "#BEBDB8"
-          },
-          grid:{
-            display: true,
-            color: "#3E424B"
-          }
-        },
-        y: {
-          border: {
-            display: true,
-            color: "#BEBDB8"
-          },
-          grid:{
-            display: true,
-            color: "#3E424B"
-          },
-         beginAtZero: false
-       }
-      }
-    }
-  }
-
-  const players_bubble_chart = new Chart(document.getElementById("bubble_chart_range"),config)
-  
- //Fetch block
- async function fetch_data() {
-  const url = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40"; // full API 100 records
-//    const url = "https://my.api.mockaroo.com/VolleyballPlayers2.json?key=c097ba40"; //simplified API 10 records less countries
-  const response = await fetch(url);
-  //wait until the request has been completed
-  const datapoints = await response.json(); //parsing json for js
-  console.log(datapoints)
-  return datapoints
-};
-
-fetch_data().then(datapoints => {
-  const range_in_attack_arr = datapoints.map(
-    function(index){
-      return index.range_in_attack;
-    });
-
-  const range_in_block_arr = datapoints.map(
-    function(index){
-      return index.range_in_block;
-    });
-
-  const first_name_arr = datapoints.map(
-    function(index){
-      return index.first_name;
-    });
-
-  const last_name_arr = datapoints.map(
-    function(index){
-      return index.last_name;
-    });
-
-  var range_dataset_arr = [];
-    for (var i = 0; i < 100; i++) {
-      range_dataset_arr[i] = {
-        label: first_name_arr[i] + " " + last_name_arr[i],
-        data: [{
-          x: range_in_attack_arr[i],
-          y: range_in_block_arr[i],
-          r: 5,
-      }],
-        backgroundColor: 'rgb(255, 99, 132)',
-      };
-    }
-  //update the labels in chart placeholder
-  players_bubble_chart.config.data.datasets = range_dataset_arr;
-  players_bubble_chart.update()
-    });
-
-}
