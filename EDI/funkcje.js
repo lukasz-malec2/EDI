@@ -138,6 +138,20 @@ function chart_js_method_old_data() {
     type: 'bar',
     data,
     options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          position: "top",
+          display: true,
+          text: "Distribution of top 100 players by country",
+          font: {
+            size: 25,
+          },
+          color: "#00FF00",
+        },
+      },
       scales: {
         y: {
           beginAtZero: true
@@ -204,6 +218,20 @@ const config = {
   type: 'bar',
   data,
   options: {
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        position: "top",
+        display: true,
+        text: "Distribution of top 100 players by country",
+        font: {
+          size: 25,
+        },
+        color: "#00FF00",
+      },
+    },
     scales: {
       y: {
         beginAtZero: true
@@ -278,6 +306,24 @@ function chart_js_method2_old_data() {
     data: data_pos,
     options: {
       plugins: {
+        legend: {
+          position: "right",
+          display: true,
+          labels: {
+            font: {
+              size:20,
+            },
+          },
+        },
+        title: {
+          position: "top",
+          display: true,
+          text: "Distribution of top 100 players by field position",
+          font: {
+            size:25,
+          },
+          color: "#00FF00",
+        },
         colors: {
           forceOverride: true
         }
@@ -346,6 +392,24 @@ const config_pos = {
   data: data_pos,
   options: {
     plugins: {
+      legend: {
+        position: "right",
+        display: true,
+        labels: {
+          font: {
+            size:20,
+          },
+        },
+      },
+      title: {
+        position: "top",
+        display: true,
+        text: "Distribution of top 100 players by field position",
+        font: {
+          size:25,
+        },
+        color: "#00FF00",
+      },
       colors: {
         forceOverride: true
       }
@@ -416,14 +480,20 @@ function chart_js_method3_old_data() {
     type: 'bubble',
     data,
     options: {
-      title: "Combination of range in attack and in range in block for each player in top 100",
       plugins: {
         legend: {
-          display:true,
-          labels: {
-            usePointStyle: true,
+          position: "bottom",
+          display: true,
+        },
+        title: {
+          position: "top",
+          display: true,
+          text: "Combination of range in attack and in range in block for each player in top 100",
+          font: {
+            size:25,
           },
-        }
+          color: "#00FF00",
+        },
       },
       scales: {
         x: {
@@ -514,14 +584,20 @@ function chart_js_method3() {
     type: 'bubble',
     data,
     options: {
-      title: "Combination of range in attack and in range in block for each player in top 100",
       plugins: {
         legend: {
-          display:true,
-          labels: {
-            usePointStyle: true,
+          position: "bottom",
+          display: true,
+        },
+        title: {
+          position: "top",
+          display: true,
+          text: "Combination of range in attack and in range in block for each player in top 100",
+          font: {
+            size:25,
           },
-        }
+          color: "#00FF00"
+        },
       },
       scales: {
         x: {
