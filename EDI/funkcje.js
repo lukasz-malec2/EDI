@@ -1,3 +1,18 @@
+//show scheme view
+function show_scheme() {
+  scheme_view = `
+    <img src="vscheme.JPG" style="width: 1200px" alt="Scheme_used">
+  `
+  document.getElementById("scheme").innerHTML = scheme_view
+}
+
+//hide scheme view
+function hide_scheme() {
+  scheme_view = ""
+  document.getElementById("scheme").innerHTML = scheme_view
+}
+
+
 
 //Fetch API to concole only
 async function Fetch_and_log_to_console() {
