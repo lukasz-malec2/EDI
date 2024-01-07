@@ -14,7 +14,7 @@
 
   h3 {
     color: gray;
-    font-size: 28px;
+    font-size: 23px;
     font-style: italic;
   }
 
@@ -80,6 +80,17 @@
     float: left;
     width: 25%;
     height: 200px;
+  }
+
+  .column_left {
+    float: left;
+    width: 50%;
+  }
+
+  .column_right {
+    float: left;
+    width: 50%;
+    text-align: right;
   }
 
   .column2 {

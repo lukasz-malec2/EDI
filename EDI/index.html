@@ -90,17 +90,31 @@
 <hr>
         <h1>Imported data</h1>
             <h2>Retrieve data with Fetch API</h2>
-            <h3>Step 1 - Obtain the data from <a href="https://www.mockaroo.com" target="_blank">mockaroo.com</a> service. Click <a href="https://lukasz-malec2.gitbub.io/EDI/scheme_details.html" target="_blank">here</a> to see scheme details.</h3><br>
+            <h3>Step 1 - Obtain the data from <a href="https://www.mockaroo.com" target="_blank">mockaroo.com</a> service. Click <a href="https://lukasz-malec2.gitbub.io/EDI/scheme_details.html" target="_blank">here</a> to see scheme details.</h3>
             <button id="Fetch_API_console_button" onclick = "Fetch_and_log_to_console()" class ="btn btn-primary">Click to obtain data and log in console</button>
             <p></p>
+            
             <h3>Step 2a - Use previously downloaded data or obtain new set to display data as the list.</h3>
-            <button id="Display_data_as_list1" onclick = "Display_data_as_list1()" class ="btn btn-warning">Click to display data as a list</button>
-            <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-secondary">Click to obtain NEW data and display as a list</button>
+            <div class="row">
+                <div class="column_left">
+                    <button id="Display_data_as_list1" onclick = "Display_data_as_list1()" class ="btn btn-warning">Click to display data as a list</button>
+                </div>
+                <div class="column_right">
+                    <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-secondary">Click to obtain NEW data and display as a list</button>
+                </div>
+            </div>
+            <p></p>
+            <div id="Fetch_retrieved_data"></div>
             <p></p>
             <h3>Step 2b - Use previously downloaded data or obtain new set to display data in the table.</h3>
-            <div id="Fetch_retrieved_data"></div>
-            <button id="Display_data_in_table1" onclick = "Display_data_in_table1()" class ="btn btn-success">Click to display data in the table</button>
-            <button id="Fetch_API_button_table" onclick = "Fetch_and_display_table()" class ="btn btn-secondary">Click to obtain NEW data and display in the table</button>
+            <div class="row">
+                <div class="column_left">
+                    <button id="Display_data_in_table1" onclick = "Display_data_in_table1()" class ="btn btn-success">Click to display data in the table</button>
+                </div>
+                <div class ="column_right">
+                    <button id="Fetch_API_button_table" onclick = "Fetch_and_display_table()" class ="btn btn-secondary">Click to obtain NEW data and display in the table</button>
+                </div>
+            </div>
             <p></p>
             <table class="table table-hover">
                 <thead>
@@ -126,6 +140,7 @@
 
 
             <h2>Retrieve data with jQuery</h2>
+            <h3>Alternate route - methods below always download new set of data.</h3>
             <button id="jQuery_console_button" onclick="jQuery_to_console()" class="btn btn-primary">Click to obtain NEW data and log in console</button>
             <p></p>
             <button id="jQuery_button" onclick="jQuery_display_data()" class="btn btn-secondary">Click to obtain NEW data and display as a list</button>
@@ -265,20 +280,42 @@
         <!--CZĘŚĆ Z WYKRESAMI-->
        <h1>Data Visualization</h1>
             <h2 id="test">Visualization with Chart.js</h2>
-            <button id="Chartjs_viz_old_data" onclick = "chart_js_method_old_data()" class ="btn btn-primary">Show number of top players by country - Bar chart</button>
-            <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-secondary">Fetch new data and show number of top players by country - Bar chart</button>
+            <p>NOTE: Diagrams works well for first set of data, but are not destroyed/updated when new set of data is available for display. Reloading page is required.</p>
+            <h3>Step 3a - Use previously downloaded data (Fetch API) or obtain new set to display data in bar diagram.</h3>
+            <div class="row">
+                <div class="column_left">
+                    <button id="Chartjs_viz_old_data" onclick = "chart_js_method_old_data()" class ="btn btn-primary">Show number of top players by country - Bar chart</button>
+                </div>
+                <div class="column_right">
+                    <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-secondary">Fetch NEW data and show number of top players by country - Bar chart</button>
+                </div>
+            </div>
             <div>
                 <canvas id="players_by_country_chart"></canvas>
             </div>
             <br>
-            <button id="Chartjs_viz2_old_data" onclick = "chart_js_method2_old_data()" class ="btn btn-primary">Show number of top players by field position - Doughnut chart</button>
-            <button id="Chartjs_viz2" onclick = "chart_js_method2()" class ="btn btn-secondary">Fetch new data and show number of top players by field position - Doughnut chart</button>
+            <h3>Step 3b - Use previously downloaded data (Fetch API) or obtain new set to display data in doughnut diagram.</h3>
+            <div class="row">
+                <div class="column_left">
+                    <button id="Chartjs_viz2_old_data" onclick = "chart_js_method2_old_data()" class ="btn btn-primary">Show number of top players by field position - Doughnut chart</button>
+                </div>
+                <div class="column_right">
+                    <button id="Chartjs_viz2" onclick = "chart_js_method2()" class ="btn btn-secondary">Fetch NEW data and show no. of top players by field position - Doughnut chart</button>
+                </div>
+            </div>
             <div class="small_diag">
                 <canvas id="players_by_position_chart"></canvas>
             </div>
             <br>
-            <button id="Chartjs_viz3_old_data" onclick = "chart_js_method3_old_data()" class ="btn btn-primary">Show range of top players - Bubble chart</button>
-            <button id="Chartjs_viz3" onclick = "chart_js_method3()" class ="btn btn-secondary">Fetch new data and show range of top players - Bubble chart</button>
+            <h3>Step 3c - Use previously downloaded data (Fetch API) or obtain new set to display data in bubble diagram.</h3>
+            <div class="row">
+                <div class="column_left">
+                    <button id="Chartjs_viz3_old_data" onclick = "chart_js_method3_old_data()" class ="btn btn-primary">Show range of top players - Bubble chart</button>
+                </div>
+                <div class="column_right">
+                    <button id="Chartjs_viz3" onclick = "chart_js_method3()" class ="btn btn-secondary">Fetch NEW data and show range of top players - Bubble chart</button>
+                </div>
+            </div>
             <div>
                 <canvas id="bubble_chart_range"></canvas>
             </div>
