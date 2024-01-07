@@ -506,7 +506,7 @@ function chart_js_method3_old_data() {
         title: {
           position: "top",
           display: true,
-          text: "Combination of range in attack and in range in block for each player in top 100",
+          text: "Combination of range in attack and range in block for each player in top 100",
           font: {
             size:25,
           },
@@ -613,7 +613,7 @@ function chart_js_method3() {
         title: {
           position: "top",
           display: true,
-          text: "Combination of range in attack and in range in block for each player in top 100",
+          text: "Combination of range in attack and range in block for each player in top 100",
           font: {
             size:25,
           },
