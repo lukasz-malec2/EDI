@@ -151,8 +151,6 @@
 
             <h2>Retrieve data with jQuery</h2>
             <h3>Alternate route - methods below always download new set of data.</h3>
-            <button id="jQuery_console_button" onclick="jQuery_to_console()" class="btn btn-primary">Click to obtain NEW data and log in console</button>
-            <p></p>
             <button id="jQuery_button" onclick="jQuery_display_data()" class="btn btn-secondary">Click to obtain NEW data and display as a list</button>
             <p></p>
             <div id="team-members-list"></div>
@@ -217,35 +215,6 @@
          </script>
 
 
-        <!--JQUERY WYPISANIE DO KONSOLI-->
-        <script>
-            $(document).ready(function () {
-
-                var apiUrl = "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40";
-
-                function fetchDataConsole() {
-                    $.ajax({
-                        url: apiUrl,
-                        dataType: 'json',
-                        success: function (data) {
-                            if (data && data.length > 0) {
-                                console.log("List of Volleyball Players:");
-                                $.each(data, function (index, siatkarz) {
-                                    console.log(siatkarz["first_name"] + ' ' + siatkarz["last_name"] + ' (' + siatkarz.height_cm + ' cm)');
-                                });
-                            } else {
-                                console.log('No data available.');
-                            }
-                        },
-                        error: function (error) {
-                            console.error('Error fetching data:', error);
-                        }
-                    });
-                }
-
-                $('#jQUERY_button_table').click(fetchDataConsole);
-            });
-        </script>
 
         <!--tabela w jquery-->
         <script>
