@@ -82,7 +82,14 @@
     visibility: hidden;
     background-color: darkslategrey;
   }
-  
+  .column1 {
+    float: left;
+    width: 75%;
+    height: 200px;
+    visibility: hidden;
+    background-color: darkslategrey;
+  }
+
   /* Clear floats after the columns */
   .row:after {
     content: "";

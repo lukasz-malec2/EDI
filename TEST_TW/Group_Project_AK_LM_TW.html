@@ -7,17 +7,17 @@
     <head>
         <title>Group Project</title>
     </head>
-    <body>         
+    <body>
         <h1>Group members</h1>
         <h2>Anna Kornaga</h2>
             <button id="AK_details_button" onclick = "show_ak_data()" class ="btn btn-primary">Click for more information about Ania</button>
             <p></p>
-            
+
         <h2>Łukasz Malec</h2>
             <button id="LM_details_button" onclick = "show_lm_data()" class ="btn btn-success"> Group Leader - Click for more information about Łukasz</button>
             <p></p>
-        
-        <h2>Tomasz Wojdyła</h2>  
+
+        <h2>Tomasz Wojdyła</h2>
             <div class="row">
             <div class="column">
             <div class="container_gp">
@@ -27,6 +27,8 @@
             </div>
         </div>
         </div>
+
+
         <div class="column2" id ="TW_details">
             <p></p>
             <button id="TW_details_button" onclick = "show_tw_data()" ondblclick = "hide_tw_data()" class ="btn btn-primary">Click for more information about Tomek</button>
@@ -40,8 +42,8 @@
         <hr>
         <h1>Imported data</h1>
             <h2>Retrieve data with Fetch API</h2>
-            <button id="Fetch_API_console_button" onclick = "Fetch_and_log_to_console()" class ="btn btn-secondary">Click to fetch data and log in console</button> 
-            <p></p>   
+            <button id="Fetch_API_console_button" onclick = "Fetch_and_log_to_console()" class ="btn btn-secondary">Click to fetch data and log in console</button>
+            <p></p>
             <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-success">Click to display retrieved data</button>
             <p></p>
             <div id="Fetch_retrieved_data"></div>
@@ -69,8 +71,8 @@
             </table>
         <hr>
             <h2>Retrieve data with jQuery</h2>
-            <button id="jQuery_console_button" onclick = "jQuery_to_console()" class ="btn btn-secondary">Click to retrieve data and log in console</button> 
-            <p></p>   
+            <button id="jQuery_console_button" onclick = "jQuery_to_console()" class ="btn btn-secondary">Click to retrieve data and log in console</button>
+            <p></p>
             <button id="jQuery_button" onclick = "jQuery_display_data()" class ="btn btn-success">Click to display retrieved data</button>
             <p></p>
         <hr>
@@ -86,7 +88,6 @@
                 <canvas id="players_by_position_chart"></canvas>
             </div>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src = "group_project_script_ak_lm_tw.js"></script>    
+        <script src = "group_project_script_ak_lm_tw.js"></script>
     </body>
 </html>
-

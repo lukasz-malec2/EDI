@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<link rel="stylesheet" href="style_łukasz.css">
+<link rel="stylesheet" href="../EDI/style.css">
 
 <html>
     <head>
@@ -10,26 +10,84 @@
         <meta charset="UTF-8">
     </head>
     <body>
-
-         <h2>Anna Kornaga </h2>
-            <button id="AK_details_button" onclick = "show_ak_data()" ondblclick = "hide_ak_data()" class ="btn btn-primary">Click for more information about Anna</button>
-            <div id="AK_details" style="visibility:hidden">
-                <p>Album number: Nieznany </p>
+        <h1>Group members</h1>
+         <h2>Anna Kornaga</h2>
+            <div class="row">
+            <div class="column">
+            <div class="container_gp">
+            <img src="../EDI/plaza.jpg" style="width: 230px; height: 190px;" alt="My photo :)" class="image_gp">
+            <div class="middle_gp">
+              <div class = "text_gp" onclick = "show_ak_data()">Click for more info</div>
             </div>
+        </div>
+        </div>
+
+
+        <div class="column2" id ="AK_details">
+            <p></p>
+            <button id="AK_details_button" onclick = "show_ak_data()" ondblclick = "hide_ak_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <div>
+                <p>Album number: NIEZNANY</p>
+                <p>Group: ZIISN1-1112</p>
+                <p>Favourite animal: <a href="https://en.wikipedia.org/wiki/Flying_squirrel" target="_blank">Flying Squirrel</a></p>
+            </div>
+        </div>
+        </div>
+
+
+
         <h2>Łukasz Malec</h2>
-            <button id="LM_details_button" onclick = "show_lm_data()" ondblclick = "hide_lm_data()" class ="btn btn-primary">Click for more information about Łukasz</button>
-            <div id="LM_details" style="visibility:hidden">
+            <div class="row">
+            <div class="column">
+            <div class="container_gp">
+            <img src="../EDI/łukasz_nowe.JPG" style="width: 230px; height: 190px; " alt="My photo :)" class="image_gp">
+            <div class="middle_gp">
+              <div class = "text_gp" onclick = "show_lm_data()">Click for more info</div>
+            </div>
+        </div>
+        </div>
+
+
+        <div class="column2" id ="LM_details">
+            <p></p>
+            <button id="LM_details_button" onclick = "show_lm_data()" ondblclick = "hide_lm_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <div>
                 <p>Album number: 226202</p>
+                <p>Group: ZIISN1-1112</p>
+                <p>Favourite superhero: <a href="https://pl.wikipedia.org/wiki/Batman" target="_blank">Batman</a></p>
             </div>
+        </div>
+        </div>
+
+
+
         <h2>Tomasz Wojdyła</h2>
-            <button id="TW_details_button" onclick = "show_tw_data()" ondblclick = "hide_tw_data()" class ="btn btn-primary">Click for more information about Tomek</button>
-            <div id="TW_details" style="visibility:hidden">
-                <p>Album number: 234216</p>
+            <div class="row">
+            <div class="column">
+            <div class="container_gp">
+            <img src="../EDI/tomek.jpg" style="width: 230px; height: 190px; " alt="My photo :)" class="image_gp">
+            <div class="middle_gp">
+              <div class = "text_gp" onclick = "show_tw_data()">Click for more info</div>
             </div>
+        </div>
+        </div>
+
+
+        <div class="column2" id ="TW_details">
+            <p></p>
+            <button id="TW_details_button" onclick = "show_tw_data()" ondblclick = "hide_tw_data()" class ="btn btn-primary">Click for more information about Tomek</button>
+            <div>
+                <p>Album number: 234216</p>
+                <p>Group: ZIISN1-1112</p>
+                <p>Favourite animal: <a href="https://en.wikipedia.org/wiki/Flying_squirrel" target="_blank">Flying Squirrel</a></p>
+            </div>
+        </div>
+        </div>
 
 
 
-        <hr>
+
+<hr>
         <h1>Imported data</h1>
             <h2>Retrieve data with Fetch API</h2>
             <button id="Fetch_API_console_button" onclick = "Fetch_and_log_to_console()" class ="btn btn-secondary">Click to fetch data and log in console</button>
@@ -37,17 +95,66 @@
             <button id="Fetch_API_button" onclick = "Fetch_and_display_data()" class ="btn btn-success">Click to display retrieved data</button>
             <p></p>
             <div id="Fetch_retrieved_data"></div>
-       <hr>
+            <button id="Fetch_API_button_table" onclick = "Fetch_and_display_table()" class ="btn btn-warning">Click to display retrieved data in table</button>
+            <p></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr class= "table-primary">
+                    <!-- Static "expected" table headers-->
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Date of birth</th>
+                        <th>Country of birth</th>
+                        <th>Height [cm]</th>
+                        <th>Weight [kg]</th>
+                        <th>Field position</th>
+                        <th>Range in block [cm]</th>
+                        <th>Range in attack [cm]</th>
+                        <th>Curent Club</th>
+                    </tr>
+                </thead>
+                <tbody id="Fetch_retrieved_data_table">
+                    <!-- populated from JS-->
+                </tbody>
+            </table>
+        <hr>
 
-         <hr>
+
+        <hr>
             <h2>Retrieve data with jQuery</h2>
             <button id="jQuery_console_button" onclick="jQuery_to_console()" class="btn btn-secondary">Click to retrieve data and log in console</button>
             <p></p>
             <button id="jQuery_button" onclick="jQuery_display_data()" class="btn btn-success">Click to display retrieved data</button>
             <p></p>
             <div id="team-members-list"></div>
-            <hr>
+        <button id="jQUERY_button_table" onclick = "Fetch_and_display_table()" class ="btn btn-warning">Click to display retrieved data in table</button>
+            <p></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr class= "table-primary">
+                    <!-- Static "expected" table headers-->
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Date of birth</th>
+                        <th>Country of birth</th>
+                        <th>Height [cm]</th>
+                        <th>Weight [kg]</th>
+                        <th>Field position</th>
+                        <th>Range in block [cm]</th>
+                        <th>Range in attack [cm]</th>
+                        <th>Curent Club</th>
+                    </tr>
+                </thead>
+                <tbody id="jQuery_retrieved_data_table">
+                    <!-- populated from JS-->
+                </tbody>
+            </table>
+        <hr>
 
+
+
+
+         <!--JQUERY WYPISANIE NA STRONE-->
          <script>
             $(document).ready(function () {
 
@@ -81,6 +188,7 @@
          </script>
 
 
+        <!--JQUERY WYPISANIE DO KONSOLI-->
         <script>
             $(document).ready(function () {
 
@@ -106,23 +214,68 @@
                     });
                 }
 
-                $('#jQuery_console_button').click(fetchDataConsole);
+                $('#jQUERY_button_table').click(fetchDataConsole);
             });
+        </script>
+
+        <!--tabela w jquery-->
+        <script>
+          $(document).ready(function() {
+            function Fetch_and_display_table() {
+              $.ajax({
+                url: "https://my.api.mockaroo.com/volleyballplayers.json?key=c097ba40",
+                dataType: "json",
+                success: function(datapoints) {
+                  let placeholder = $("#jQuery_retrieved_data_table");
+                  let out = "";
+                  $.each(datapoints, function(index, datapoint) {
+                    out += `
+                      <tr>
+                        <td>${datapoint.first_name}</td>
+                        <td>${datapoint.last_name}</td>
+                        <td>${datapoint.date_of_birth}</td>
+                        <td>${datapoint.country_of_birth}</td>
+                        <td>${datapoint.height_cm}</td>
+                        <td>${datapoint.weight_kg}</td>
+                        <td>${datapoint.position_in_field}</td>
+                        <td>${datapoint.range_in_block}</td>
+                        <td>${datapoint.range_in_attack}</td>
+                        <td>${datapoint.curent_club}</td>
+                      </tr>
+                    `;
+                  });
+                  placeholder.html(out);
+                }
+              });
+            }
+
+            // Call the function when the document is ready
+              $('#jQUERY_button_table').click(Fetch_and_display_table);
+          });
         </script>
 
 
 
-        <h1>Data Visualization</h1>
+
+
+        <!--CZĘŚĆ Z WYKRESAMI-->
+       <h1>Data Visualization</h1>
             <h2 id="test">Visualization with Chart.js</h2>
             <button id="Chartjs_viz" onclick = "chart_js_method()" class ="btn btn-warning">Show number of top players by Country</button>
             <div>
                 <canvas id="players_by_country_chart"></canvas>
             </div>
+            <br>
+            <button id="Chartjs_viz2" onclick = "chart_js_method2()" class ="btn btn-warning">Show number of top players by field position</button>
+            <div>
+                <canvas id="players_by_position_chart"></canvas>
+            </div>
+
 
 
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src = "funkcje.js"></script>
-        <script src = "funkcje_drugie.js"></script>
+        <script src = "../EDI/funkcje.js"></script>
+        <script src = "../EDI/funkcje_drugie.js"></script>
     </body>
 </html>
